@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Scoliosis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="sage.css">
+<style>
+/* Preview only. sage.css is byte-identical to the mockup's. */
+.brand__logo{height:56px;width:auto;display:block}
+.brand__logo--dark{display:none}
+.nav.is-stuck .brand__logo--light{display:none}
+.nav.is-stuck .brand__logo--dark{display:block}
+
+/* NAV FIT: second nav action ("Existing Patients", added 2026-08-11) costs the
+   link row ~220px, which made "Who We Are" and "Patient Forms" wrap onto two
+   lines below roughly 1500px. The links now never wrap, and between the mobile
+   breakpoint and 1500px their padding and size tighten to make the room.
+   sage.css stays byte-identical; this is preview-only, like the logo rules. */
+.brand{flex:none}
+.nav__links a{white-space:nowrap}
+@media (min-width:1081px) and (max-width:1500px){
+  .nav__links{gap:0}
+  .nav__links a{padding-inline:.5em;font-size:14.5px}
+}
+/* Below 1250px the row cannot hold logo + six links + two buttons: the links
+   already wrapped there BEFORE this button existed, and with it the logo got
+   squeezed to nothing. So the existing-patient button steps aside below 1250,
+   and the footer contact card carries the same link at every width, which is
+   also how it is reached on mobile. The nowrap + tightening above means the
+   1081-1250 band now holds one clean line, which it never did before. */
+@media (max-width:1250px){ .nav__cta .btn-ghost{display:none} }
+</style>
+<style>/* Visible placeholders for facts not yet confirmed (emit.py ph()). */
+.le-ph{display:inline-block;padding:.1em .45em;border:1.5px dashed #b7791f;border-radius:4px;background:#fff7e6;color:#7a4b00;font:600 13px/1.4 system-ui,sans-serif;letter-spacing:0;text-transform:none;vertical-align:middle}
+.le-ph--block{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;height:100%;min-height:120px}
+</style>
+<style>/* Client palette over Sage green (emit.py palette_css). */
+:root{--g-band:#59666e;--g-mid:#6f7d86;--g-lite:#c5b7b5;--g-lite-txt:#ede4e1;--g-deep:#3d474d}
+.sec--green{background:radial-gradient(80% 120% at 88% 6%, rgba(197,183,181,.20) 0%, rgba(197,183,181,0) 58%),linear-gradient(158deg,#67757e 0%,#59666e 46%,#444e55 100%)}
+.ihero--green{background:radial-gradient(80% 120% at 88% 4%, rgba(197,183,181,.22) 0%, rgba(197,183,181,0) 56%),linear-gradient(158deg,#67757e 0%,#59666e 46%,#444e55 100%)}
+.cite{background:radial-gradient(90% 130% at 92% 0%, rgba(197,183,181,.2) 0%, rgba(197,183,181,0) 60%),linear-gradient(154deg,#67757e 0%,#59666e 52%,#444e55 100%)}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     CONDITION DETAIL - the archetype behind 21 pages on the :8089
+     build (/back-pain/, /neck-pain/, /sciatica/, /headaches/ and
+     the rest of the catalog).
+
+     Deliberately NOT the service page with a different heading.
+     The build's condition template is genuinely leaner: no
+     benefits band, no numbered process. A condition page answers
+     "why does this hurt and can you help", and the extra bands
+     would push the FAQ - which is the second thing these visitors
+     read - another screen down. Kept lean here too.
+
+     These are the highest-traffic pages on a chiropractic site,
+     so the copy is the build's verbatim and the evidence callout
+     carries its source.
+     ============================================================ -->
+
+<div class="util">
+  <div class="wrap">
+    <a href="https://www.google.com/maps/search/?api=1&query=Complete+Chiropractic%2C+5225+Cleveland+Rd%2C+Suite+A%2C+Wooster%2C+OH+44691" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 5225 Cleveland Rd, Suite A <span class="le-ph">[suite number to confirm (A or A2)]</span>, Wooster</a>
+    <a href="tel:3303453336"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> (330) 345-3336</a>
+    <span class="spacer"></span>
+    <span class="hide-s">Open Monday to Thursday <span class="le-ph">[hours to confirm]</span></span>
+    <a href="https://www.facebook.com/CCLCWooster/" target="_blank" rel="noopener" class="soc" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+    <a href="https://www.instagram.com/completechirowooster/" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/></svg></a>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="Complete Chiropractic"><span class="le-ph">[logo to confirm: Logo.png or Spine Logo.png]</span> <span class="le-brandtxt">Complete Chiropractic</span></a>
+      <div class="nav__links">
+        <a href="index.html">Home</a><a href="capela-chiro-about.html">Who We Are</a><a href="capela-chiro-services.html">Services</a><a href="capela-chiro-conditions.html" class="on">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
+      </div>
+      <div class="nav__cta">
+        <a href="capela-chiro-special.html" class="btn btn-ghost" target="_blank" rel="noopener">Existing Patients <span class="le-ph">[booking link needed]</span></a>
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <button class="nav__burger" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============
+     back-pain.webp is the build's own image and it is compliant:
+     a symptom shot, the patient's own life, no practitioner in
+     frame. The condition catalog is the one image set that did
+     not need replacing. -->
+<header class="ihero">
+  <div class="ihero__media"><img src="assets/scoliosis.webp" alt="A practitioner assessing the curve of a spine, with the spine highlighted"></div>
+  <div class="ihero__scrim"></div>
+  <div class="wrap">
+    <div class="ihero__in">
+      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><a href="capela-chiro-conditions.html">Conditions</a><i>/</i><b>Scoliosis</b></nav>
+      <span class="eyebrow reveal" style="--d:1">Conditions we help with</span>
+      <h1><span class="mask"><span style="--d:2">Scoliosis support</span></span><span class="mask"><span style="--d:3">in <em style="font-style:normal;color:var(--g-lite)">Wooster</em></span></span></h1>
+      <span class="rule"></span>
+      <p class="ihero__sub reveal" style="--d:5">A spine with a curve can still move and feel better. Hands-on care in Wooster that works alongside the medical team monitoring the curve itself.</p>
+      <div class="chips reveal" style="--d:6">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> New patients welcome</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11V5.5a1.5 1.5 0 013 0V11m0 0V4.5a1.5 1.5 0 013 0V11m0 0V6.5a1.5 1.5 0 013 0V14a7 7 0 01-7 7h-1a7 7 0 01-7-7v-3a1.5 1.5 0 013 0"/></svg>  Comfort and mobility, alongside your medical team</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Serving Wooster</span>
+      </div>
+      <div class="ihero__acts reveal" style="--d:7">
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+      </div>
+    </div>
+  </div>
+  <div class="wave" style="--wave-end:#fff">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</header>
+
+<!-- ============ SHORT ANSWER + BODY + EVIDENCE ============ -->
+<section class="sec grain">
+  <div class="ghost ghost--l" style="left:-3%;top:3%">Relief</div>
+  <div class="wrap">
+    <div class="body__grid">
+
+      <aside class="body__rail reveal">
+        <span class="eyebrow">On this page</span>
+        <nav><ul class="toc">
+          <li><a href="#what-is-scoliosis">What is scoliosis?</a></li>
+          <li><a href="#how-does-chiropractic-care-help-with-sco">How does chiropractic care help with scoliosis?</a></li>
+          <li><a href="#what-does-care-cost-and-do-you-take-insu">What does care cost, and do you take insurance?</a></li>
+          <li><a href="#faq">Questions we hear most</a></li>
+        </ul></nav>
+        <div class="rail__cta">
+          <a href="capela-chiro-special.html" class="btn btn-primary">Schedule an appointment</a>
+          <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+        </div>
+        <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
+      </aside>
+
+      <div>
+        <div class="answer reveal">
+          <span class="eyebrow">The short answer</span>
+          <p>Scoliosis is a sideways curve of the spine, and honesty matters here: chiropractic care does not straighten the curve. What it can do is help a spine that has a curve move better and feel more comfortable, easing the stiffness and muscle strain the curve creates, while your medical team monitors and manages the curve itself.</p>
+        </div>
+
+        <div class="prose reveal" style="--d:1">
+          <p style="margin-top:2.2em">Scoliosis attracts big promises, and most of them are not honest. So here is the plain version: what scoliosis is, what actually manages the curve, and the real and useful role hands-on care can play in comfort and movement without pretending to be a cure.</p>
+          
+          <h2 id="what-is-scoliosis">What is scoliosis?</h2>
+          <p>Scoliosis is a sideways curvature of the spine, often with a rotation to it. Most cases appear during the growth years and have no single identifiable cause, which is the type doctors call idiopathic. It ranges from mild curves that need only monitoring to larger ones that need active medical management. The size of the curve, measured on an X-ray, is what guides how it is handled.</p>
+          <p>What the curve tends to create day to day:</p>
+          <ul>
+            <li>Muscles working unevenly across the two sides of the spine.</li>
+            <li>Stiffness and reduced movement through the curved segments.</li>
+            <li>Aching from the postural load the curve puts on the back.</li>
+            <li>Uneven wear over time in the joints along the curve.</li>
+            <li>Self-consciousness about posture, especially through the teenage years.</li>
+          </ul>
+          <p>What manages the curve itself is monitoring, and for growing children a brace when the curve warrants it, and surgery for the largest curves. That belongs with the medical specialists who track it, and we work alongside them rather than in place of them.</p>
+          
+          <h2 id="how-does-chiropractic-care-help-with-sco">How does chiropractic care help with scoliosis?</h2>
+          <p>With the comfort and the movement, not the curve. Gentle, specific adjustments and soft-tissue work can restore movement to the stiff segments along the curve and ease the uneven muscle strain it creates, which for many people means less aching and easier movement day to day.</p>
+          <p>In practice, supportive care usually blends a few things:</p>
+          <ul>
+            <li>Gentle adjustments to restore movement to the stiff segments, matched carefully to the spine.</li>
+            <li>Soft-tissue work to ease the muscle strain the curve creates on each side.</li>
+            <li>Movement and strengthening to support the spine and help posture feel steadier.</li>
+            <li>Coordination with the doctor or specialist monitoring the curve, not around them.</li>
+          </ul>
+          <p>The goal is honest and modest: a spine with a curve that moves better and hurts less.</p>
+          
+          <h2 id="what-does-care-cost-and-do-you-take-insu">What does care cost, and do you take insurance?</h2>
+          <p>No referral is needed to book, and we will go over the costs with you up front so there are no surprises. Costs depend on your plan and what your back needs, and we will always walk you through it in plain numbers first.</p>
+          <ul>
+            <li>No referral needed to book a first visit.</li>
+            <li>We go over the costs with you before anything begins, so you know what to expect.</li>
+            <li>Supportive care for comfort and movement, coordinated with the team monitoring the curve.</li>
+          </ul>
+          <p class="prose__note">We cannot promise a specific outcome or what your insurance will cover, and we will not promise to reduce a curve, because that is not what this care does. What we can promise is an honest look, a straight answer, and care that works with your medical team rather than against their advice.</p>
+          
+          <div class="cite">
+            <span class="cite__badge">Bracing works</span>
+            <p>For a growing child or teen, the U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases states plainly that braces work well when the child is still growing and the brace is worn as directed. That is the evidence-backed way to manage a growing curve, and it sits with the medical team; our role is the comfort and movement around it.</p>
+            <div class="cite__src">Source: U.S. National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS), Scoliosis in Children and Teens. <a href="https://www.niams.nih.gov/health-topics/scoliosis/diagnosis-treatment-and-steps-to-take">niams.nih.gov</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec--paper grain" id="faq">
+  <div class="wrap">
+    <div class="faq">
+      <div class="reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 style="margin-top:.3em">Scoliosis questions we hear most</h2>
+        <span class="rule"></span>
+        <p class="lead" style="margin-top:1.3em">The 5 we are asked before almost every first visit.</p>
+        <a href="tel:3303453336" class="btn btn-primary" style="margin-top:1.9em">Ask us directly</a>
+      </div>
+      <div class="faq__list reveal" style="--d:1">
+        <details open><summary>Can chiropractic care straighten scoliosis?</summary><div class="faq__a">No, and anyone promising that is overselling. Chiropractic care does not reduce the curve. What it can genuinely do is help a spine with a curve move better and feel more comfortable by easing stiffness and uneven muscle strain. We keep those two things separate on purpose, because honesty about the difference is the whole point.</div></details>
+        <details><summary>Is chiropractic care safe for a spine with scoliosis?</summary><div class="faq__a">For most people, gentle chiropractic care aimed at comfort and movement has a strong safety record, and it is matched carefully to a spine with a curve. The first visit is a thorough history and check, and we coordinate with the doctor or specialist monitoring the curve. If anything suggests the curve needs medical review, we will say so.</div></details>
+        <details><summary>My child was just diagnosed. Should they see you or a specialist?</summary><div class="faq__a">A specialist leads on the curve, and that should be the priority: monitoring, and bracing if the curve warrants it while your child is still growing. We are a supportive addition for comfort and movement, not a substitute for that medical care. We are glad to work alongside their team.</div></details>
+        <details><summary>Will care hurt or make the curve worse?</summary><div class="faq__a">Gentle, appropriately matched care is not aiming to force the spine, and it should not make a curve worse. If a curve is significant or progressing, that is exactly when coordination with the monitoring specialist matters most, and we will keep our care within what fits the medical plan.</div></details>
+        <details><summary>What can help scoliosis discomfort day to day?</summary><div class="faq__a">Staying active and strong through the trunk helps many people, as does keeping the curved segments moving rather than letting them stiffen. Supportive hands-on care can ease the aching. The curve itself, though, is monitored and managed medically, and that part should not be left to comfort care alone.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOU MIGHT ALSO LOOK AT ============ -->
+<section class="sec grain">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">Related</span>
+        <h2>You might also look at</h2>
+        <span class="rule"></span>
+      </div>
+      <p class="head__note lead"><a href="capela-chiro-conditions.html" style="color:var(--g-band);text-decoration:underline;text-underline-offset:3px">All conditions we help with</a></p>
+    </div>
+    <div class="rel">
+      <a class="rcard reveal" style="--d:0" href="capela-chiro-condition-back-pain.html"><img src="assets/back-pain.webp" alt="Back pain"><span class="rcard__in"><h3>Back pain</h3><p>The postural aching a curve tends to create.</p></span></a>
+      <a class="rcard reveal" style="--d:1" href="capela-chiro-condition-neck-pain.html"><img src="assets/neck-pain.webp" alt="Neck pain"><span class="rcard__in"><h3>Neck pain</h3><p>The upper spine, where a curve can carry into the neck.</p></span></a>
+      <a class="rcard reveal" style="--d:2" href="capela-chiro-condition-headaches.html"><img src="assets/headaches.webp" alt="Headaches & migraines"><span class="rcard__in"><h3>Headaches & migraines</h3><p>A lot of headaches start in the neck and shoulders.</p></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec sec--green on-dark sec--wavebottom">
+  <div class="ghost ghost--r" style="right:-2%;top:8%">Book</div>
+  <div class="wrap">
+    <div class="endcta reveal">
+      <span class="eyebrow">Next step</span>
+      <h2 style="margin-top:.3em">Honest support, alongside your medical team.</h2>
+      <p class="lead">New patients are welcome. Come as you are, we will take it from there.</p>
+      <div class="endcta__acts">
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+      </div>
+      <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
+    </div>
+  </div>
+  <div class="wave" style="--wave-end:var(--paper-2)">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</section>
+
+<footer class="foot" id="foot">
+  <div class="wrap">
+    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Contact <em>Us</em></h2></div>
+    <div class="foot__cards">
+      <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A <span class="le-ph">[suite number to confirm (A or A2)]</span><br>Wooster, OH</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday <span class="le-ph">[hours to confirm]</span></li><li><a href="capela-chiro-special.html" target="_blank" rel="noopener">Existing patient booking <span class="le-ph">[booking link needed]</span></a></li></ul></div>
+      <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li></ul></div>
+      <div class="card fc reveal" style="--d:2"><h3>Conditions</h3><ul><li><a href="capela-chiro-conditions.html">Back Pain</a></li><li><a href="capela-chiro-condition-neck-pain.html">Neck Pain</a></li><li><a href="capela-chiro-condition-headaches.html">Headaches & Migraines</a></li><li><a href="capela-chiro-condition-sciatica.html">Sciatica</a></li><li><a href="capela-chiro-conditions.html">All conditions</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>&copy; 2026 Complete Chiropractic</span><span class="spacer"></span><span>Preview for client review. Not yet live. <span class="le-ph">[colours assumed, to confirm with the practice]</span></span></div>
+  </div>
+</footer>
+
+<div class="mobar">
+  <a href="tel:3303453336" class="btn btn-ghost">Call</a>
+  <a href="capela-chiro-special.html" class="btn btn-primary">Schedule an appointment</a>
+</div>
+
+<script src="sage.js"></script>
+</body>
+</html>

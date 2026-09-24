@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Arm & leg pain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="sage.css">
+<style>
+/* Preview only. sage.css is byte-identical to the mockup's. */
+.brand__logo{height:56px;width:auto;display:block}
+.brand__logo--dark{display:none}
+.nav.is-stuck .brand__logo--light{display:none}
+.nav.is-stuck .brand__logo--dark{display:block}
+
+/* NAV FIT: second nav action ("Existing Patients", added 2026-08-11) costs the
+   link row ~220px, which made "Who We Are" and "Patient Forms" wrap onto two
+   lines below roughly 1500px. The links now never wrap, and between the mobile
+   breakpoint and 1500px their padding and size tighten to make the room.
+   sage.css stays byte-identical; this is preview-only, like the logo rules. */
+.brand{flex:none}
+.nav__links a{white-space:nowrap}
+@media (min-width:1081px) and (max-width:1500px){
+  .nav__links{gap:0}
+  .nav__links a{padding-inline:.5em;font-size:14.5px}
+}
+/* Below 1250px the row cannot hold logo + six links + two buttons: the links
+   already wrapped there BEFORE this button existed, and with it the logo got
+   squeezed to nothing. So the existing-patient button steps aside below 1250,
+   and the footer contact card carries the same link at every width, which is
+   also how it is reached on mobile. The nowrap + tightening above means the
+   1081-1250 band now holds one clean line, which it never did before. */
+@media (max-width:1250px){ .nav__cta .btn-ghost{display:none} }
+</style>
+<style>/* Visible placeholders for facts not yet confirmed (emit.py ph()). */
+.le-ph{display:inline-block;padding:.1em .45em;border:1.5px dashed #b7791f;border-radius:4px;background:#fff7e6;color:#7a4b00;font:600 13px/1.4 system-ui,sans-serif;letter-spacing:0;text-transform:none;vertical-align:middle}
+.le-ph--block{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;height:100%;min-height:120px}
+</style>
+<style>/* Client palette over Sage green (emit.py palette_css). */
+:root{--g-band:#59666e;--g-mid:#6f7d86;--g-lite:#c5b7b5;--g-lite-txt:#ede4e1;--g-deep:#3d474d}
+.sec--green{background:radial-gradient(80% 120% at 88% 6%, rgba(197,183,181,.20) 0%, rgba(197,183,181,0) 58%),linear-gradient(158deg,#67757e 0%,#59666e 46%,#444e55 100%)}
+.ihero--green{background:radial-gradient(80% 120% at 88% 4%, rgba(197,183,181,.22) 0%, rgba(197,183,181,0) 56%),linear-gradient(158deg,#67757e 0%,#59666e 46%,#444e55 100%)}
+.cite{background:radial-gradient(90% 130% at 92% 0%, rgba(197,183,181,.2) 0%, rgba(197,183,181,0) 60%),linear-gradient(154deg,#67757e 0%,#59666e 52%,#444e55 100%)}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     CONDITION DETAIL - the archetype behind 21 pages on the :8089
+     build (/back-pain/, /neck-pain/, /sciatica/, /headaches/ and
+     the rest of the catalog).
+
+     Deliberately NOT the service page with a different heading.
+     The build's condition template is genuinely leaner: no
+     benefits band, no numbered process. A condition page answers
+     "why does this hurt and can you help", and the extra bands
+     would push the FAQ - which is the second thing these visitors
+     read - another screen down. Kept lean here too.
+
+     These are the highest-traffic pages on a chiropractic site,
+     so the copy is the build's verbatim and the evidence callout
+     carries its source.
+     ============================================================ -->
+
+<div class="util">
+  <div class="wrap">
+    <a href="https://www.google.com/maps/search/?api=1&query=Complete+Chiropractic%2C+5225+Cleveland+Rd%2C+Suite+A%2C+Wooster%2C+OH+44691" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 5225 Cleveland Rd, Suite A <span class="le-ph">[suite number to confirm (A or A2)]</span>, Wooster</a>
+    <a href="tel:3303453336"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> (330) 345-3336</a>
+    <span class="spacer"></span>
+    <span class="hide-s">Open Monday to Thursday <span class="le-ph">[hours to confirm]</span></span>
+    <a href="https://www.facebook.com/CCLCWooster/" target="_blank" rel="noopener" class="soc" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+    <a href="https://www.instagram.com/completechirowooster/" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/></svg></a>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="Complete Chiropractic"><span class="le-ph">[logo to confirm: Logo.png or Spine Logo.png]</span> <span class="le-brandtxt">Complete Chiropractic</span></a>
+      <div class="nav__links">
+        <a href="index.html">Home</a><a href="capela-chiro-about.html">Who We Are</a><a href="capela-chiro-services.html">Services</a><a href="capela-chiro-conditions.html" class="on">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
+      </div>
+      <div class="nav__cta">
+        <a href="capela-chiro-special.html" class="btn btn-ghost" target="_blank" rel="noopener">Existing Patients <span class="le-ph">[booking link needed]</span></a>
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <button class="nav__burger" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============
+     back-pain.webp is the build's own image and it is compliant:
+     a symptom shot, the patient's own life, no practitioner in
+     frame. The condition catalog is the one image set that did
+     not need replacing. -->
+<header class="ihero">
+  <div class="ihero__media"><img src="assets/extremity-pain.webp" alt="Holding a forearm where radiating pain and tingling are felt"></div>
+  <div class="ihero__scrim"></div>
+  <div class="wrap">
+    <div class="ihero__in">
+      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><a href="capela-chiro-conditions.html">Conditions</a><i>/</i><b>Arm & leg pain</b></nav>
+      <span class="eyebrow reveal" style="--d:1">Conditions we help with</span>
+      <h1><span class="mask"><span style="--d:2">Arm and leg pain relief</span></span><span class="mask"><span style="--d:3">in <em style="font-style:normal;color:var(--g-lite)">Wooster</em></span></span></h1>
+      <span class="rule"></span>
+      <p class="ihero__sub reveal" style="--d:5">Pain, tingling, or numbness that travels down a limb usually starts at the spine rather than where you feel it. Hands-on care in Wooster that looks where the problem begins.</p>
+      <div class="chips reveal" style="--d:6">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> New patients welcome</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11V5.5a1.5 1.5 0 013 0V11m0 0V4.5a1.5 1.5 0 013 0V11m0 0V6.5a1.5 1.5 0 013 0V14a7 7 0 01-7 7h-1a7 7 0 01-7-7v-3a1.5 1.5 0 013 0"/></svg>  Low-force options for an irritated nerve</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Serving Wooster</span>
+      </div>
+      <div class="ihero__acts reveal" style="--d:7">
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+      </div>
+    </div>
+  </div>
+  <div class="wave" style="--wave-end:#fff">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</header>
+
+<!-- ============ SHORT ANSWER + BODY + EVIDENCE ============ -->
+<section class="sec grain">
+  <div class="ghost ghost--l" style="left:-3%;top:3%">Relief</div>
+  <div class="wrap">
+    <div class="body__grid">
+
+      <aside class="body__rail reveal">
+        <span class="eyebrow">On this page</span>
+        <nav><ul class="toc">
+          <li><a href="#what-causes-arm-and-leg-pain">What causes arm and leg pain?</a></li>
+          <li><a href="#how-does-chiropractic-care-help-with-arm">How does chiropractic care help with arm and leg pain?</a></li>
+          <li><a href="#what-does-care-cost-and-do-you-take-insu">What does care cost, and do you take insurance?</a></li>
+          <li><a href="#faq">Questions we hear most</a></li>
+        </ul></nav>
+        <div class="rail__cta">
+          <a href="capela-chiro-special.html" class="btn btn-primary">Schedule an appointment</a>
+          <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+        </div>
+        <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
+      </aside>
+
+      <div>
+        <div class="answer reveal">
+          <span class="eyebrow">The short answer</span>
+          <p>Pain, tingling, or numbness that travels down an arm or a leg is usually a nerve being irritated somewhere along its path, most often where it exits the spine. Chiropractic care works on what is crowding the nerve: restoring movement to the joints around it, easing the tissue that is pressing on it, and giving you the positions that let an irritated nerve settle.</p>
+        </div>
+
+        <div class="prose reveal" style="--d:1">
+          <p style="margin-top:2.2em">Pain that travels is unsettling in a way that local pain is not. You feel it in the hand or the calf, but the hand and the calf are usually fine. Here is a plain-language look at why radiating pain happens, how chiropractic care can help, and when it is something that needs a faster answer than we can give.</p>
+          
+          <h2 id="what-causes-arm-and-leg-pain">What causes arm and leg pain?</h2>
+          <p>The nerves that supply your arms and legs branch off the spinal cord and exit between the vertebrae of the neck and low back. When one of those nerve roots gets compressed or irritated where it leaves the spine, the symptom shows up further down the line, in the limb the nerve serves. That is why a problem in the neck is felt in the hand, and a problem in the low back is felt in the leg.</p>
+          <p>The usual contributors we see in Wooster:</p>
+          <ul>
+            <li>A disc bulge or herniation pressing on a nerve root as it exits the spine.</li>
+            <li>Joint stiffness that narrows the space the nerve travels through.</li>
+            <li>Muscle that has tightened and clamped down around the nerve on its way to the limb.</li>
+            <li>Posture that loads the neck or low back the same way for hours at a time.</li>
+            <li>An old injury that changed how a segment moves and quietly crowds the nerve.</li>
+          </ul>
+          <p>Some radiating pain needs a faster answer than a course of care. Weakness that is getting worse, numbness through the saddle area, pain down both legs at once, or any change in bladder or bowel control is a medical emergency and needs to be seen now. New arm pain with chest pressure, sweating, or breathlessness needs emergency care, not a chiropractor. Part of a good first visit is ruling that out.</p>
+          
+          <h2 id="how-does-chiropractic-care-help-with-arm">How does chiropractic care help with arm and leg pain?</h2>
+          <p>Chiropractic care works on the mechanics of what is irritating the nerve at its source. Gentle, specific adjustments restore movement to the joints of the neck or low back that have stiffened and guarded, which can take pressure off an irritated nerve root.</p>
+          <p>In practice, a course of care usually blends a few things:</p>
+          <ul>
+            <li>Adjustments to restore motion at the spinal level the nerve exits, matched in force to a nerve that is already irritable.</li>
+            <li>Soft-tissue work along the path the nerve travels to the arm or leg.</li>
+            <li>Positions and movements that help the pain move out of your leg.</li>
+            <li>Practical changes to how you sit, stand, and work, so the same pressure does not keep rebuilding.</li>
+          </ul>
+          <p>The first goal is to settle the irritation at its source, then give you the movement and habits to keep the limb quiet.</p>
+          
+          <h2 id="what-does-care-cost-and-do-you-take-insu">What does care cost, and do you take insurance?</h2>
+          <p>No referral is needed to book, and we will go over the costs with you up front so there are no surprises. Costs depend on your plan and what your spine needs, and we will always walk you through it in plain numbers first.</p>
+          <ul>
+            <li>No referral needed to book a first visit.</li>
+            <li>We go over the costs with you before anything begins, so you know what to expect.</li>
+            <li>Clear, up-front pricing if you are paying out of pocket.</li>
+          </ul>
+          <p class="prose__note">We cannot promise a specific outcome or what your insurance will cover; every plan and every nerve is different. What we can promise is an honest look and a straight answer.</p>
+          
+          <div class="cite">
+            <span class="cite__badge">Most improve within weeks</span>
+            <p>For the leg-pain version of this, where a nerve is irritated in the low back, a BMJ review of sciatica describes the clinical course as favourable: about 50% of people reported improvement within 10 days and about 75% after four weeks. The arm-pain version is less studied. A first visit is where we work out which picture you are in and whether it is settling on its own.</p>
+            <div class="cite__src">Source: a 2007 sciatica review in the BMJ, via the U.S. National Library of Medicine. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1895638/">pmc.ncbi.nlm.nih.gov</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec--paper grain" id="faq">
+  <div class="wrap">
+    <div class="faq">
+      <div class="reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 style="margin-top:.3em">Arm and leg pain questions we hear most</h2>
+        <span class="rule"></span>
+        <p class="lead" style="margin-top:1.3em">The 5 we are asked before almost every first visit.</p>
+        <a href="tel:3303453336" class="btn btn-primary" style="margin-top:1.9em">Ask us directly</a>
+      </div>
+      <div class="faq__list reveal" style="--d:1">
+        <details open><summary>Is chiropractic care safe for radiating arm or leg pain?</summary><div class="faq__a">For most people with common, mechanical nerve irritation, gentle chiropractic care has a strong safety record. An irritated nerve gets a lighter hand, so the first visit is a careful history and check, and low-force options are used while the limb is symptomatic. If your history or exam points to something that should be seen medically first, we will tell you.</div></details>
+        <details><summary>Why does my hand hurt if the problem is in my neck?</summary><div class="faq__a">Because the nerve to your hand starts at your neck. When it gets irritated where it exits the spine, the message your brain receives is a problem in the hand, even though the hand itself is fine. That is also why working only the spot that hurts rarely helps; the source is usually higher up the line.</div></details>
+        <details><summary>How long until the limb settles?</summary><div class="faq__a">Many people notice the symptom pulling back toward the spine within the first couple of weeks, which is usually the first sign of progress even before the pain fully drops. It depends on what is irritating the nerve and how long it has been going on. After your first visit we will give you a realistic window rather than a guess.</div></details>
+        <details><summary>Do I need an MRI first?</summary><div class="faq__a">Not usually. Most mechanical nerve irritation does not need imaging to begin care, and a thorough history and physical check is the standard starting point. If your exam shows weakness that is worsening, or your history points to something that warrants imaging, we will arrange or refer for it before going further.</div></details>
+        <details><summary>When is radiating pain an emergency?</summary><div class="faq__a">Weakness that is getting worse rather than better, numbness through the saddle area, pain down both legs at once, or any change in bladder or bowel control needs urgent medical attention the same day. New arm pain with chest pressure, sweating, or breathlessness needs emergency care now. Those are rare, and they are not something to bring to a chiropractor first.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOU MIGHT ALSO LOOK AT ============ -->
+<section class="sec grain">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">Related</span>
+        <h2>You might also look at</h2>
+        <span class="rule"></span>
+      </div>
+      <p class="head__note lead"><a href="capela-chiro-conditions.html" style="color:var(--g-band);text-decoration:underline;text-underline-offset:3px">All conditions we help with</a></p>
+    </div>
+    <div class="rel">
+      <a class="rcard reveal" style="--d:0" href="capela-chiro-condition-neck-pain.html"><img src="assets/neck-pain.webp" alt="Neck pain"><span class="rcard__in"><h3>Neck pain</h3><p>Where arm pain and tingling usually start.</p></span></a>
+      <a class="rcard reveal" style="--d:1" href="capela-chiro-condition-disc-injury.html"><img src="assets/chiropractic.webp" alt="Disc injury"><span class="rcard__in"><h3>Disc injury</h3><p>When a disc is what is pressing on the nerve root.</p></span></a>
+      <a class="rcard reveal" style="--d:2" href="capela-chiro-condition-back-pain.html"><img src="assets/back-pain.webp" alt="Back pain"><span class="rcard__in"><h3>Back pain</h3><p>Most back pain has a reason, and finding it beats guessing at it.</p></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec sec--green on-dark sec--wavebottom">
+  <div class="ghost ghost--r" style="right:-2%;top:8%">Book</div>
+  <div class="wrap">
+    <div class="endcta reveal">
+      <span class="eyebrow">Next step</span>
+      <h2 style="margin-top:.3em">Trace it back to where it starts.</h2>
+      <p class="lead">New patients are welcome. Come as you are, we will take it from there.</p>
+      <div class="endcta__acts">
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+      </div>
+      <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
+    </div>
+  </div>
+  <div class="wave" style="--wave-end:var(--paper-2)">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</section>
+
+<footer class="foot" id="foot">
+  <div class="wrap">
+    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Contact <em>Us</em></h2></div>
+    <div class="foot__cards">
+      <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A <span class="le-ph">[suite number to confirm (A or A2)]</span><br>Wooster, OH</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday <span class="le-ph">[hours to confirm]</span></li><li><a href="capela-chiro-special.html" target="_blank" rel="noopener">Existing patient booking <span class="le-ph">[booking link needed]</span></a></li></ul></div>
+      <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li></ul></div>
+      <div class="card fc reveal" style="--d:2"><h3>Conditions</h3><ul><li><a href="capela-chiro-conditions.html">Back Pain</a></li><li><a href="capela-chiro-condition-neck-pain.html">Neck Pain</a></li><li><a href="capela-chiro-condition-headaches.html">Headaches & Migraines</a></li><li><a href="capela-chiro-condition-sciatica.html">Sciatica</a></li><li><a href="capela-chiro-conditions.html">All conditions</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>&copy; 2026 Complete Chiropractic</span><span class="spacer"></span><span>Preview for client review. Not yet live. <span class="le-ph">[colours assumed, to confirm with the practice]</span></span></div>
+  </div>
+</footer>
+
+<div class="mobar">
+  <a href="tel:3303453336" class="btn btn-ghost">Call</a>
+  <a href="capela-chiro-special.html" class="btn btn-primary">Schedule an appointment</a>
+</div>
+
+<script src="sage.js"></script>
+</body>
+</html>

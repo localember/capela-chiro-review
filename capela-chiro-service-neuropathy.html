@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Neuropathy Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<link rel="stylesheet" href="sage.css">
+<style>
+/* Preview only. sage.css is byte-identical to the mockup's. */
+.brand__logo{height:56px;width:auto;display:block}
+.brand__logo--dark{display:none}
+.nav.is-stuck .brand__logo--light{display:none}
+.nav.is-stuck .brand__logo--dark{display:block}
+
+/* NAV FIT: second nav action ("Existing Patients", added 2026-08-11) costs the
+   link row ~220px, which made "Who We Are" and "Patient Forms" wrap onto two
+   lines below roughly 1500px. The links now never wrap, and between the mobile
+   breakpoint and 1500px their padding and size tighten to make the room.
+   sage.css stays byte-identical; this is preview-only, like the logo rules. */
+.brand{flex:none}
+.nav__links a{white-space:nowrap}
+@media (min-width:1081px) and (max-width:1500px){
+  .nav__links{gap:0}
+  .nav__links a{padding-inline:.5em;font-size:14.5px}
+}
+/* Below 1250px the row cannot hold logo + six links + two buttons: the links
+   already wrapped there BEFORE this button existed, and with it the logo got
+   squeezed to nothing. So the existing-patient button steps aside below 1250,
+   and the footer contact card carries the same link at every width, which is
+   also how it is reached on mobile. The nowrap + tightening above means the
+   1081-1250 band now holds one clean line, which it never did before. */
+@media (max-width:1250px){ .nav__cta .btn-ghost{display:none} }
+</style>
+<style>/* Visible placeholders for facts not yet confirmed (emit.py ph()). */
+.le-ph{display:inline-block;padding:.1em .45em;border:1.5px dashed #b7791f;border-radius:4px;background:#fff7e6;color:#7a4b00;font:600 13px/1.4 system-ui,sans-serif;letter-spacing:0;text-transform:none;vertical-align:middle}
+.le-ph--block{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;height:100%;min-height:120px}
+</style>
+<style>/* Client palette over Sage green (emit.py palette_css). */
+:root{--g-band:#59666e;--g-mid:#6f7d86;--g-lite:#c5b7b5;--g-lite-txt:#ede4e1;--g-deep:#3d474d}
+.sec--green{background:radial-gradient(80% 120% at 88% 6%, rgba(197,183,181,.20) 0%, rgba(197,183,181,0) 58%),linear-gradient(158deg,#67757e 0%,#59666e 46%,#444e55 100%)}
+.ihero--green{background:radial-gradient(80% 120% at 88% 4%, rgba(197,183,181,.22) 0%, rgba(197,183,181,0) 56%),linear-gradient(158deg,#67757e 0%,#59666e 46%,#444e55 100%)}
+.cite{background:radial-gradient(90% 130% at 92% 0%, rgba(197,183,181,.2) 0%, rgba(197,183,181,0) 60%),linear-gradient(154deg,#67757e 0%,#59666e 52%,#444e55 100%)}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SERVICE DETAIL - the archetype behind 14 pages on the :8089
+     build (/chiropractic/, /decompression/, /neuropathy/,
+     /pediatric/, /prenatal/, /acupuncture/ and the rest).
+
+     Band sequence is the BUILD's, unchanged:
+       hero -> short answer + long body + evidence -> why patients
+       choose this -> what your care looks like -> FAQ -> you might
+       also look at -> CTA -> footer.
+     Copy is the build's, verbatim. Only the flavour is new.
+     ============================================================ -->
+
+<div class="util">
+  <div class="wrap">
+    <a href="https://www.google.com/maps/search/?api=1&query=Complete+Chiropractic%2C+5225+Cleveland+Rd%2C+Suite+A%2C+Wooster%2C+OH+44691" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 5225 Cleveland Rd, Suite A <span class="le-ph">[suite number to confirm (A or A2)]</span>, Wooster</a>
+    <a href="tel:3303453336"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg> (330) 345-3336</a>
+    <span class="spacer"></span>
+    <span class="hide-s">Open Monday to Thursday <span class="le-ph">[hours to confirm]</span></span>
+    <a href="https://www.facebook.com/CCLCWooster/" target="_blank" rel="noopener" class="soc" aria-label="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+    <a href="https://www.instagram.com/completechirowooster/" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/></svg></a>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="Complete Chiropractic"><span class="le-ph">[logo to confirm: Logo.png or Spine Logo.png]</span> <span class="le-brandtxt">Complete Chiropractic</span></a>
+      <div class="nav__links">
+        <a href="index.html">Home</a><a href="capela-chiro-about.html">Who We Are</a><a href="capela-chiro-services.html" class="on">Services</a><a href="capela-chiro-conditions.html">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
+      </div>
+      <div class="nav__cta">
+        <a href="capela-chiro-special.html" class="btn btn-ghost" target="_blank" rel="noopener">Existing Patients <span class="le-ph">[booking link needed]</span></a>
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <button class="nav__burger" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="ihero">
+  <div class="ihero__media"><img src="assets/svc-nerve-rebuilder.webp" alt="Care for the foot discomfort of peripheral neuropathy in Wooster"></div>
+  <div class="ihero__scrim"></div>
+  <div class="wrap">
+    <div class="ihero__in">
+      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><a href="capela-chiro-services.html">Services</a><i>/</i><b>Neuropathy Care</b></nav>
+      <span class="eyebrow reveal" style="--d:1">What we do</span>
+      <h1><span class="mask"><span style="--d:2">Neuropathy care</span></span><span class="mask"><span style="--d:3">in <em style="font-style:normal;color:var(--g-lite)">Wooster</em></span></span></h1>
+      <span class="rule"></span>
+      <p class="ihero__sub reveal" style="--d:5">Peripheral neuropathy has many causes, and honesty matters here: our role is the mechanical and spinal side, working alongside the medical care that manages the underlying cause.</p>
+      <div class="chips reveal" style="--d:6">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> New patients welcome</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11V5.5a1.5 1.5 0 013 0V11m0 0V4.5a1.5 1.5 0 013 0V11m0 0V6.5a1.5 1.5 0 013 0V14a7 7 0 01-7 7h-1a7 7 0 01-7-7v-3a1.5 1.5 0 013 0"/></svg>  We coordinate with your medical team</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Serving Wooster</span>
+      </div>
+      <div class="ihero__acts reveal" style="--d:7">
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+      </div>
+    </div>
+  </div>
+  <div class="wave" style="--wave-end:#fff">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</header>
+
+<!-- ============ SHORT ANSWER + LONG BODY + EVIDENCE ============
+     One 8,000px column on the build, with four H2s inside it and
+     no way for the reader to see the page's own shape. Same copy,
+     given the services band's pinned-side grammar. -->
+<section class="sec grain" id="answer">
+  <div class="ghost ghost--l" style="left:-3%;top:3%">Care</div>
+  <div class="wrap">
+    <div class="body__grid">
+
+      <aside class="body__rail reveal">
+        <span class="eyebrow">On this page</span>
+        <nav><ul class="toc">
+          <li><a href="#what-is-peripheral-neuropathy">What is peripheral neuropathy?</a></li>
+          <li><a href="#where-chiropractic-care-fits-with-neurop">Where chiropractic care fits with neuropathy</a></li>
+          <li><a href="#neuropathy-by-the-numbers">Neuropathy by the numbers</a></li>
+          <li><a href="#faq">Questions we hear most</a></li>
+        </ul></nav>
+        <div class="rail__cta">
+          <a href="capela-chiro-special.html" class="btn btn-primary">Schedule an appointment</a>
+          <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+        </div>
+        <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
+      </aside>
+
+      <div>
+        <div class="answer reveal">
+          <span class="eyebrow">The short answer</span>
+          <p>Peripheral neuropathy causes numbness, tingling, burning, or weakness, usually in the hands and feet, and it is a condition we care for. We use a range of modalities aimed at the mechanical and spinal factors that contribute to it, and the goal is real improvement in both symptoms and day-to-day function. What we will not promise is a long-term cure, because there is not one. The people who do best are the ones who stay consistent with what we teach them.</p>
+        </div>
+
+        <div class="prose reveal" style="--d:1">
+          <p style="margin-top:2.2em">Here is the straight version: what peripheral neuropathy is, what our assessment actually looks at, where this care fits alongside your medical team, and what to expect from it.</p>
+          
+          <h2 id="what-is-peripheral-neuropathy">What is peripheral neuropathy?</h2>
+          <p>It is damage or dysfunction in the peripheral nerves, the ones that carry signals between your spinal cord and the rest of your body. When they are affected, you feel it as numbness, tingling, burning, or weakness, most often in the feet and hands. It has many causes, and the most common by far is diabetes; others include injury, certain medications, and nerve compression.</p>
+          <p>Because the causes are so varied, the single most useful thing is an accurate picture of what is driving yours. Some of that is squarely medical and belongs with your doctor. A part of it, sometimes, is mechanical.</p>
+          
+          <h2 id="where-chiropractic-care-fits-with-neurop">Where chiropractic care fits with neuropathy</h2>
+          <p>Where this care earns its place is the mechanical side. If a nerve is compressed or irritated where it exits the spine, or if joint and muscle problems are adding to what you feel in your hands and feet, that part is workable, and it is what we assess for and work on. What it does not do is repair damaged nerves or resolve a systemic cause such as diabetes; that stays with your medical team, and we work alongside them.</p>
+          <p>The first visit is a detailed evaluation of the quality of neurological function in the extremities, together with an assessment of spinal function to detect any spinal complications contributing to it. From that you get a clear picture:</p>
+          <ul>
+            <li>A careful assessment of whether a spinal or mechanical factor is contributing to your symptoms.</li>
+            <li>Hands-on care for any nerve-compression or joint-and-muscle component we find.</li>
+            <li>Movement and practical guidance to reduce mechanical load on an irritated nerve.</li>
+            <li>Coordination with the doctor managing the underlying cause, and a referral when that is the right call.</li>
+          </ul>
+          <p>If your neuropathy is entirely medical, we will tell you that a chiropractor is not the answer to it, and point you to who is.</p>
+          
+          <h2 id="neuropathy-by-the-numbers">Neuropathy by the numbers</h2>
+          <p>These are the figures this practice publishes about how common neuropathy is and how it is usually managed.</p>
+          <ul>
+            <li>Peripheral neuropathy affects nearly 46.5 million Americans.</li>
+            <li>Approximately 150,000 patients per year have amputations due to neuropathy.</li>
+            <li>It is estimated that 60 to 70 percent of diabetics suffer from peripheral neuropathy.</li>
+            <li>30 to 40 percent of all cancer patients have chemotherapy-induced peripheral neuropathy.</li>
+            <li>90 percent of neuropathy sufferers depend on medications or injections to manage their symptoms.</li>
+            <li>Falls and hip fractures caused by the balance problems that come with neuropathy are rising.</li>
+          </ul>
+          <ul>
+            <li>No referral needed to book a first assessment.</li>
+            <li>We go over the costs with you before anything begins, so you know what to expect.</li>
+            <li>An honest read on whether there is a mechanical component, and a referral when there is not.</li>
+          </ul>
+          <p class="prose__note">We cannot promise a specific outcome, and we will not promise to cure neuropathy, because that is not what this care does. Neuropathy care here is a complement to the medical management of its underlying cause, never a replacement for it.</p>
+          
+          <div class="cite">
+            <span class="cite__badge">About 13.5%</span>
+            <p>of U.S. adults aged 40 and older have peripheral neuropathy, according to national survey data reported through the U.S. National Library of Medicine, and the share is far higher among people with diabetes. It is common, its causes are mostly medical, and an honest assessment is the right first step.</p>
+            <div class="cite__src">Source: Peripheral Neuropathy and All-Cause and Cardiovascular Mortality in US Adults, via the U.S. National Library of Medicine (PubMed Central). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7932559/">pmc.ncbi.nlm.nih.gov</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOUR CARE LOOKS LIKE ============ -->
+<section class="sec grain">
+  <div class="ghost ghost--r" style="right:-3%;bottom:2%">Process</div>
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">Step by step</span>
+        <h2>What your care looks like</h2>
+        <span class="rule"></span>
+      </div>
+      <p class="head__note lead">No surprises, and nothing you have not agreed to.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" style="--d:0"><span class="step__n">1</span><h3>A conversation first</h3><p>Your first visit starts with history and questions, not an adjustment.</p></div>
+      <div class="step reveal" style="--d:1"><span class="step__n">2</span><h3>A careful check</h3><p>We look at how you move and work out whether this is something we can help with, or something that belongs with another provider.</p></div>
+      <div class="step reveal" style="--d:2"><span class="step__n">3</span><h3>A plan you agree to</h3><p>You hear what we found, what we would suggest, and roughly how long before you should expect to notice a change.</p></div>
+      <div class="step reveal" style="--d:3"><span class="step__n">4</span><h3>Care, then spacing out</h3><p>Most people start with a short course of visits and taper as things settle and daily activity gets easier.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec--paper grain" id="faq">
+  <div class="wrap">
+    <div class="faq">
+      <div class="reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2 style="margin-top:.3em">Neuropathy questions we hear most</h2>
+        <span class="rule"></span>
+        <p class="lead" style="margin-top:1.3em">The 5 we are asked before almost every first visit.</p>
+        <a href="tel:3303453336" class="btn btn-primary" style="margin-top:1.9em">Ask us directly</a>
+      </div>
+      <div class="faq__list reveal" style="--d:1">
+        <details open><summary>Can chiropractic care cure neuropathy?</summary><div class="faq__a">Honestly, no. Chiropractic care does not repair damaged nerves or resolve a medical cause like diabetes, and we will not claim it does. Where the assessment finds a mechanical or nerve-compression component adding to your symptoms, we can work on that part. For the underlying cause, your doctor leads and we coordinate.</div></details>
+        <details><summary>Then why see a chiropractor about it?</summary><div class="faq__a">For an honest assessment. Some neuropathy symptoms have a mechanical component, a nerve irritated or compressed along its path, that is workable, and some do not. A careful look tells you which, and either points to something we can genuinely help with or confirms that this belongs with your medical team.</div></details>
+        <details><summary>Is it my diabetes?</summary><div class="faq__a">Diabetes is the most common cause of peripheral neuropathy, so if you are diabetic it is very likely part of the picture, and that part is managed medically. Good blood-sugar control does more for diabetic neuropathy than anything we offer. We are glad to work alongside your medical care, not in place of it.</div></details>
+        <details><summary>Is the care safe?</summary><div class="faq__a">For the mechanical component, gentle chiropractic care has a strong safety record, and it is matched carefully to you. The first visit is a thorough history and check, precisely because neuropathy has medical causes we need to account for. If your picture calls for a medical work-up first, we will say so.</div></details>
+        <details><summary>When should I see a doctor urgently?</summary><div class="faq__a">Numbness or weakness that is new, spreading, or worsening quickly, symptoms alongside poorly controlled diabetes, or any loss of function needs prompt medical attention rather than a course of care with us. Those are not something to work around; get them looked at medically.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ YOU MIGHT ALSO LOOK AT ============ -->
+<section class="sec grain">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <span class="eyebrow">Related</span>
+        <h2>You might also look at</h2>
+        <span class="rule"></span>
+      </div>
+      <p class="head__note lead"><a href="capela-chiro-conditions.html" style="color:var(--g-band);text-decoration:underline;text-underline-offset:3px">All conditions we help with</a></p>
+    </div>
+    <div class="rel">
+      <a class="rcard reveal" style="--d:0" href="capela-chiro-condition-back-pain.html"><img src="assets/back-pain.webp" alt="Back pain"><span class="rcard__in"><h3>Back pain</h3><p>The low back a compressed nerve often traces back to.</p></span></a>
+      <a class="rcard reveal" style="--d:1" href="capela-chiro-condition-neck-pain.html"><img src="assets/neck-pain.webp" alt="Neck pain"><span class="rcard__in"><h3>Neck pain</h3><p>The desk, the phone, and the pillow you actually use matter more than most advice admits.</p></span></a>
+      <a class="rcard reveal" style="--d:2" href="capela-chiro-condition-headaches.html"><img src="assets/headaches.webp" alt="Headaches & migraines"><span class="rcard__in"><h3>Headaches & migraines</h3><p>A lot of headaches start in the neck and shoulders.</p></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec sec--green on-dark sec--wavebottom">
+  <div class="ghost ghost--r" style="right:-2%;top:8%">Book</div>
+  <div class="wrap">
+    <div class="endcta reveal">
+      <span class="eyebrow">Next step</span>
+      <h2 style="margin-top:.3em">An honest assessment, alongside your medical care.</h2>
+      <p class="lead">New patients are welcome. Come as you are, we will take it from there.</p>
+      <div class="endcta__acts">
+        <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
+        <a href="tel:3303453336" class="btn btn-ghost">(330) 345-3336</a>
+      </div>
+      <p style="margin-top:1.1em;font-size:15px;opacity:.85">Tell us a good time and we'll call to confirm.</p>
+    </div>
+  </div>
+  <div class="wave" style="--wave-end:var(--paper-2)">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
+  </div>
+</section>
+
+<footer class="foot" id="foot">
+  <div class="wrap">
+    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Contact <em>Us</em></h2></div>
+    <div class="foot__cards">
+      <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A <span class="le-ph">[suite number to confirm (A or A2)]</span><br>Wooster, OH</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday <span class="le-ph">[hours to confirm]</span></li><li><a href="capela-chiro-special.html" target="_blank" rel="noopener">Existing patient booking <span class="le-ph">[booking link needed]</span></a></li></ul></div>
+      <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li></ul></div>
+      <div class="card fc reveal" style="--d:2"><h3>Conditions</h3><ul><li><a href="capela-chiro-conditions.html">Back Pain</a></li><li><a href="capela-chiro-condition-neck-pain.html">Neck Pain</a></li><li><a href="capela-chiro-condition-headaches.html">Headaches & Migraines</a></li><li><a href="capela-chiro-condition-sciatica.html">Sciatica</a></li><li><a href="capela-chiro-conditions.html">All conditions</a></li></ul></div>
+    </div>
+    <div class="foot__base"><span>&copy; 2026 Complete Chiropractic</span><span class="spacer"></span><span>Preview for client review. Not yet live. <span class="le-ph">[colours assumed, to confirm with the practice]</span></span></div>
+  </div>
+</footer>
+
+<div class="mobar">
+  <a href="tel:3303453336" class="btn btn-ghost">Call</a>
+  <a href="capela-chiro-special.html" class="btn btn-primary">Schedule an appointment</a>
+</div>
+
+<script src="sage.js"></script>
+</body>
+</html>
