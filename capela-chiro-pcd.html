@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Thank you - Complete Chiropractic</title>
+<title>PCD Patient Plans - Complete Chiropractic, Wooster OH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,13 +16,6 @@
 .brand__logo--dark{display:none}
 .nav.is-stuck .brand__logo--light{display:none}
 .nav.is-stuck .brand__logo--dark{display:block}
-/* Lead form failure state. It has to be impossible to miss: the whole point of
-   the delivery rule is that a submission that did not land is visible, and the
-   patient is handed the phone number instead of a dead end. */
-.lead-err{margin:0;padding:14px 16px;border-radius:10px;background:#fdecec;
-  border:1px solid #e5a3a3;color:#8a1f1f;font-size:15px;line-height:1.45}
-.lead-err a{color:inherit;font-weight:600;text-decoration:underline}
-#lead-btn[disabled]{opacity:.6;cursor:progress}
 
 /* NAV FIT: second nav action ("Existing Patients", added 2026-08-11) costs the
    link row ~220px, which made "Who We Are" and "Patient Forms" wrap onto two
@@ -47,6 +40,12 @@
 .brand__icon{width:42px;height:42px;border-radius:50%;background:#fff;object-fit:contain;padding:3px;flex:none;box-shadow:0 1px 6px rgba(0,0,0,.18)}
 @media (max-width:720px){.brand__icon{width:36px;height:36px}}
 </style>
+<style>/* More-services list (emit.py extra_services_band). */
+.xsvc__grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:clamp(12px,1.2vw,18px)}
+.xsvc{padding:clamp(18px,1.6vw,24px)}
+.xsvc h3{font-size:17px;line-height:1.3}
+.xsvc p{margin-top:.45em;font-size:15px;color:var(--ink-soft);line-height:1.5}
+</style>
 <style>/* Compact utility bar on phones (emit.py UTIL_COMPACT_CSS). */
 @media (max-width:720px){.util .wrap>a[href*="maps"]{display:none}}
 </style>
@@ -62,7 +61,6 @@
 </style>
 </head>
 <body>
-
 
 <div class="util">
   <div class="wrap">
@@ -80,7 +78,7 @@
     <div class="nav__inner">
       <a href="index.html" class="brand" aria-label="Complete Chiropractic"><img class="brand__icon" src="assets/brand-spine-icon.webp" alt="" aria-hidden="true"> <span class="le-brandtxt">Complete Chiropractic</span></a>
       <div class="nav__links">
-        <a href="index.html">Home</a><a href="capela-chiro-about.html">Who We Are</a><a href="capela-chiro-services.html">Services</a><a href="capela-chiro-pcd.html">PCD Plans</a><a href="capela-chiro-conditions.html">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="capela-chiro-about.html">Who We Are</a><a href="capela-chiro-services.html">Services</a><a href="capela-chiro-pcd.html" class="on">PCD Plans</a><a href="capela-chiro-conditions.html">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
       </div>
       <div class="nav__cta">
         <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
@@ -90,33 +88,48 @@
   </div>
 </nav>
 
-<!-- ============================================================
-     THANK YOU. Reached ONLY after a lead POST returned a readable
-     2xx (see the delivery block in capela-chiro-contact.html). Never on a
-     timer and never optimistically, so arriving here means the
-     request reached GoHighLevel.
-     ============================================================ -->
 <header class="ihero ihero--green on-dark">
-  <div class="ghost ghost--r" style="right:-3%;top:18%">Thanks</div>
   <div class="wrap">
     <div class="ihero__in">
-      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>Thank you</b></nav>
-      <span class="eyebrow reveal" style="--d:1">Message received</span>
-      <h1><span class="mask"><span style="--d:2">Thank <em style="font-style:normal;color:var(--g-lite)">you</em></span></span></h1>
-      <span class="rule"></span>
-      <p class="ihero__sub reveal" style="--d:5">We have your details. Someone from the office will call you to confirm a time that works for you. If you would rather not wait, the number is <a href="tel:3303453336" style="color:inherit;font-weight:600">(330) 345-3336</a>.</p>
+      <nav class="crumb reveal" style="--d:0"><a href="index.html">Home</a><i>/</i><b>PCD Patient Plans</b></nav>
+      <span class="eyebrow reveal" style="--d:1">Patient plans</span>
+      <h1><span class="mask"><span style="--d:2">PCD</span></span><span class="mask"><span style="--d:3"> <em style="font-style:normal;color:var(--g-lite)">patient plans</em></span></span></h1>
+      <span class="rule reveal" style="--d:4"></span>
+      <p class="ihero__sub reveal" style="--d:5">Preferred Chiropractic Doctor (PCD) is a discount medical plan our office uses so cash-paying patients can save on care. It is not insurance.</p>
+      <div class="ihero__acts reveal" style="--d:6">
+        <a class="btn btn-lite" href="https://portal.bewell2.com/patient/sign-up?selected-provider=692ed323ee5c557272904c07" target="_blank" rel="noopener nofollow">Enroll now</a>
+        <a class="btn btn-ghost" href="capela-chiro-special.html">$47 new patient special</a>
+      </div>
     </div>
-  </div>
-  <div class="wave" style="--wave-end:#fff">
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
-    <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M1440 276.8s-255.057-1.964-432-1.54c-26.047.061-51.843 15.76-73.44 15.94-30.357.252-54.058-14.95-70.56-14.4-30.211 1.008-48 25.2-72 21.6-24-3.6-48-28.8-72-28.8s-48 25.2-72 28.8c-24 3.6-41.789-20.592-72-21.6-16.769-.559-42.412 14.64-73.44 14.388-21.623-.175-44.532-15.871-70.56-15.932C254.828 274.847 0 276.8 0 276.8V320h1440v-43.2Z"/></svg>
   </div>
 </header>
 
+<section class="sec">
+  <div class="wrap" style="max-width:72ch">
+    <div class="reveal">
+      <span class="eyebrow">What PCD covers</span>
+      <h2 style="margin-top:.3em">A few things you should know</h2>
+      <span class="rule"></span>
+      <ul class="offer__inc" style="margin-top:1.6em">
+        <li>PCD plans guarantee members save 25% off standard fees for exams, x-rays, adjustments, and therapies with participating PCD providers in America.</li>
+        <li>PCD plans include a spouse and legal dependents up to age 26 at no additional charge (married children excluded).</li>
+        <li>PCD is a 365-day yearly plan. It expires on the same day each year, not at the end of the calendar year.</li>
+        <li>PCD is not insurance, and is void in conjunction with any third-party entity or federal or state health insurance programs, including Workers&rsquo; Compensation.</li>
+        <li>PCD plan members cannot file claims on services rendered at PCD rates, and cannot apply those visits toward an insurance deductible or use PCD as secondary insurance.</li>
+      </ul>
+      <p class="lead" style="margin-top:1.8em">As a Preferred Chiropractic Doctor provider, we can give PCD plan members 25% off exams, x-rays, adjustments, and therapies for a whole year.</p>
+      <div style="margin-top:1.8em;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="https://portal.bewell2.com/patient/sign-up?selected-provider=692ed323ee5c557272904c07" target="_blank" rel="noopener nofollow">Enroll now</a>
+        <a class="btn btn-ghost" href="capela-chiro-contact.html#financing">Other payment options</a>
+      </div>
+      <p style="margin-top:2em;font-size:13.5px;color:var(--ink-soft);line-height:1.65">This plan is a discount plan, not a health insurance policy. The licensed discount medical plan organization is Access One Consumer Health, Inc., 84 Villa Road, Greenville, SC 29615; (800) 896-1962; <a href="http://www.accessonedmpo.com" target="_blank" rel="noopener">www.accessonedmpo.com</a>.</p>
+    </div>
+  </div>
+</section>
 
 <footer class="foot" id="foot">
   <div class="wrap">
-    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Come <em>In</em></h2></div>
+    <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Contact <em>Us</em></h2></div>
     <div class="foot__cards">
       <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A<br>Wooster, OH</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday</li><li><a href="capela-chiro-new-patient-paperwork.html">New patient paperwork</a></li></ul></div>
       <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li><li><a href="https://localember.github.io/capela-living-well-review/">Functional Medicine</a></li></ul></div>
@@ -128,7 +141,7 @@
 
 <div class="mobar">
   <a href="tel:3303453336" class="btn btn-ghost">Call</a>
-  <a href="capela-chiro-contact.html#form" class="btn btn-primary">Send a message</a>
+  <a href="capela-chiro-special.html" class="btn btn-primary">Schedule an appointment</a>
 </div>
 
 <script src="sage.js"></script>
