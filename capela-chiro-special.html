@@ -104,7 +104,7 @@
     <div class="nav__inner">
       <a href="index.html" class="brand" aria-label="Complete Chiropractic"><img class="brand__icon" src="assets/brand-spine-icon.webp" alt="" aria-hidden="true"> <span class="le-brandtxt">Complete Chiropractic</span></a>
       <div class="nav__links">
-        <a href="index.html">Home</a><a href="capela-chiro-about.html">Who We Are</a><a href="capela-chiro-services.html">Services</a><a href="capela-chiro-conditions.html">Conditions</a><a href="capela-chiro-new-patient-paperwork.html">Patient Forms</a><a href="capela-chiro-contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="capela-chiro-about.html">Who We Are</a><a href="capela-chiro-services.html">Services</a><a href="capela-chiro-conditions.html">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
       </div>
       <div class="nav__cta">
         <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
@@ -177,6 +177,7 @@
             <div class="field"><label for="oln">Last name <i>*</i></label><input id="oln" name="last_name" type="text" autocomplete="family-name" required></div>
             <div class="field"><label for="oph">Phone <i>*</i></label><input id="oph" name="phone" type="tel" autocomplete="tel" required></div>
             <div class="field"><label for="oem">Email <i>*</i></label><input id="oem" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="odob">Date of birth <i>*</i></label><input id="odob" name="date_of_birth" type="date" autocomplete="bday" required></div>
             <div class="field field--full"><label for="opt">What day or time works best? <span style="font-weight:400;opacity:.7">(optional)</span></label><input id="opt" name="preferred_time" type="text" placeholder="For example, weekday mornings, or Thursday after 3"></div>
             <div class="field field--full"><label for="oms">What is going on? <i>*</i></label><textarea id="oms" name="message" required placeholder="A sentence is plenty. When did it start?"></textarea></div>
             <div class="field field--full">
@@ -243,7 +244,7 @@
     <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Start <em>Here</em></h2></div>
     <div class="foot__cards">
       <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A<br>Wooster, OH</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday</li><li><a href="capela-chiro-new-patient-paperwork.html">New patient paperwork</a></li></ul></div>
-      <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li></ul></div>
+      <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li><li><a href="https://localember.github.io/capela-living-well-review/">Functional Medicine</a></li></ul></div>
       <div class="card fc reveal" style="--d:2"><h3>Conditions</h3><ul><li><a href="capela-chiro-conditions.html">Back Pain</a></li><li><a href="capela-chiro-condition-neck-pain.html">Neck Pain</a></li><li><a href="capela-chiro-condition-headaches.html">Headaches & Migraines</a></li><li><a href="capela-chiro-condition-sciatica.html">Sciatica</a></li><li><a href="capela-chiro-conditions.html">All conditions</a></li></ul></div>
     </div>
     <div class="foot__base"><span>&copy; 2026 Complete Chiropractic</span><span class="spacer"></span><span>Preview for client review. Not yet live.</span></div>
@@ -306,6 +307,7 @@
       last:  form.last_name.value.trim(),
       phone: form.phone.value.trim(),
       email: form.email.value.trim(),
+      dob:   form.date_of_birth.value.trim(),
       msg:   form.message.value.trim(),
       when:  form.preferred_time.value.trim()
     };
@@ -317,6 +319,7 @@
     if (f.email.indexOf('@') < 1 || f.email.indexOf('.', f.email.indexOf('@')) < 0) {
       return fail('That email address does not look right. Please check it.');
     }
+    if (!f.dob) { return fail('Please enter your date of birth.'); }
     if (!f.msg) { return fail('Please tell us briefly what is going on.'); }
 
     track('lead_form_attempt', { form_id: 'capela-chiro-new-patients', form_location: 'special' });
@@ -338,6 +341,7 @@
       'Last Name':  f.last,
       'Phone':      f.phone,
       'Email':      f.email,
+      'Date of Birth': f.dob,
       'Message':    f.msg,
       'Preferred Time': f.when,
       'Source':     'Website new patient page'
