@@ -15,6 +15,13 @@
 .brand__logo{height:56px;width:auto;display:block}
 .brand__logo--dark{display:none}
 .revs{grid-template-columns:repeat(3,1fr)}
+/* Desktop only: 10 reviews of very different lengths flow as three masonry
+   columns, so no card is left alone on a last row and none stretch to match a
+   tall neighbour. Below 1081px le-nav.css keeps the 2 and 1 column grid. */
+@media (min-width:1081px){
+  section .revs{display:block;columns:3;column-gap:14px}
+  section .revs .rev{break-inside:avoid;margin-bottom:14px}
+}
 .nav.is-stuck .brand__logo--light{display:none}
 .nav.is-stuck .brand__logo--dark{display:block}
 
@@ -311,7 +318,7 @@
         <span class="b__n" data-count="4">4</span> <span class="b__l">Days a week in clinic, Monday to Thursday</span>
       </div>
       <div class="card b b--stat reveal" style="--d:3">
-        <span class="b__n" data-count="9">9</span> <span class="b__l">Core services under one roof</span>
+        <span class="b__n" data-count="12">12</span> <span class="b__l">Core services under one roof</span>
       </div>
     </div>
   </div>
@@ -358,7 +365,7 @@
   <div class="wrap">
     <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Contact <em>Us</em></h2></div>
     <div class="foot__cards">
-      <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A<br>Wooster, OH</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday</li><li><a href="capela-chiro-new-patient-paperwork.html">New patient paperwork</a></li><li><a href="capela-chiro-pcd.html">Payment options</a></li></ul></div>
+      <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A<br>Wooster, OH 44691</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday</li><li><a href="capela-chiro-new-patient-paperwork.html">New patient paperwork</a></li><li><a href="capela-chiro-pcd.html">Payment options</a></li></ul></div>
       <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li><li><a href="https://localember.github.io/capela-living-well-review/">Functional Medicine</a></li><li><a href="https://localember.github.io/capela-living-well-review/capela-living-well-service-functional-neurology.html">Functional Neurology</a></li></ul></div>
       <div class="card fc reveal" style="--d:2"><h3>Conditions</h3><ul><li><a href="capela-chiro-conditions.html">Back Pain</a></li><li><a href="capela-chiro-condition-neck-pain.html">Neck Pain</a></li><li><a href="capela-chiro-condition-headaches.html">Headaches & Migraines</a></li><li><a href="capela-chiro-condition-sciatica.html">Sciatica</a></li><li><a href="capela-chiro-conditions.html">All conditions</a></li></ul></div>
     </div>
