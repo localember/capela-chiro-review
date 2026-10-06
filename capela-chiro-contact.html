@@ -131,7 +131,6 @@
           <div class="field"><label for="ln">Last name <i>*</i></label><input id="ln" name="last_name" type="text" autocomplete="family-name" required></div>
           <div class="field"><label for="ph">Phone <i>*</i></label><input id="ph" name="phone" type="tel" autocomplete="tel" required></div>
           <div class="field"><label for="em">Email <i>*</i></label><input id="em" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label for="dob">Date of birth <i>*</i></label><input id="dob" name="date_of_birth" type="date" autocomplete="bday" required></div>
           <div class="field field--full"><label for="pt">What day or time works best? <span style="font-weight:400;opacity:.7">(optional)</span></label><input id="pt" name="preferred_time" type="text" placeholder="For example, weekday mornings, or Thursday after 3"></div>
           <div class="field field--full"><label for="ms">Message <i>*</i></label><textarea id="ms" name="message" required placeholder="What is going on, and when did it start?"></textarea></div>
           <div class="field field--full">
@@ -219,7 +218,7 @@
     <div class="foot__megawrap"><h2 class="foot__mega" id="mega">Come <em>In</em></h2></div>
     <div class="foot__cards">
       <div class="card fc fc--g reveal" style="--d:0"><h3>Complete Chiropractic</h3><ul><li>5225 Cleveland Rd, Suite A<br>Wooster, OH</li><li><a href="tel:3303453336">(330) 345-3336</a></li><li>Open Monday to Thursday</li><li><a href="capela-chiro-new-patient-paperwork.html">New patient paperwork</a></li><li><a href="capela-chiro-pcd.html">Payment options</a></li></ul></div>
-      <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li><li><a href="https://localember.github.io/capela-living-well-review/">Functional Medicine</a></li></ul></div>
+      <div class="card fc reveal" style="--d:1"><h3>Services</h3><ul><li><a href="capela-chiro-services.html">Chiropractic Adjustments</a></li><li><a href="capela-chiro-service-decompression.html">Spinal Decompression</a></li><li><a href="capela-chiro-service-knee-decompression.html">Knee Decompression</a></li><li><a href="capela-chiro-service-laser-therapy.html">Laser Therapy</a></li><li><a href="capela-chiro-service-neuropathy.html">Neuropathy Care</a></li><li><a href="capela-chiro-service-orthotics.html">Custom Orthotics</a></li><li><a href="capela-chiro-service-pediatric.html">Pediatric Chiropractic</a></li><li><a href="capela-chiro-service-wellness-care.html">Wellness Care</a></li><li><a href="capela-chiro-service-nutrition.html">Nutrition</a></li><li><a href="https://localember.github.io/capela-living-well-review/">Functional Medicine</a></li><li><a href="https://localember.github.io/capela-living-well-review/capela-living-well-service-functional-neurology.html">Functional Neurology</a></li></ul></div>
       <div class="card fc reveal" style="--d:2"><h3>Conditions</h3><ul><li><a href="capela-chiro-conditions.html">Back Pain</a></li><li><a href="capela-chiro-condition-neck-pain.html">Neck Pain</a></li><li><a href="capela-chiro-condition-headaches.html">Headaches & Migraines</a></li><li><a href="capela-chiro-condition-sciatica.html">Sciatica</a></li><li><a href="capela-chiro-conditions.html">All conditions</a></li></ul></div>
     </div>
     <div class="foot__base"><span>&copy; 2026 Complete Chiropractic</span><span class="spacer"></span><span>Preview for client review. Not yet live.</span></div>
@@ -282,7 +281,6 @@
       last:  form.last_name.value.trim(),
       phone: form.phone.value.trim(),
       email: form.email.value.trim(),
-      dob:   form.date_of_birth.value.trim(),
       msg:   form.message.value.trim(),
       when:  form.preferred_time.value.trim()
     };
@@ -294,7 +292,6 @@
     if (f.email.indexOf('@') < 1 || f.email.indexOf('.', f.email.indexOf('@')) < 0) {
       return fail('That email address does not look right. Please check it.');
     }
-    if (!f.dob) { return fail('Please enter your date of birth.'); }
     if (!f.msg) { return fail('Please tell us briefly what is going on.'); }
 
     track('lead_form_attempt', { form_id: 'capela-chiro-contact', form_location: 'contact' });
@@ -316,7 +313,6 @@
       'Last Name':  f.last,
       'Phone':      f.phone,
       'Email':      f.email,
-      'Date of Birth': f.dob,
       'Message':    f.msg,
       'Preferred Time': f.when,
       'Source':     'Website contact form'
