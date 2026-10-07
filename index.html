@@ -96,6 +96,25 @@
 @media (min-width:721px){ #hero .eyebrow{white-space:nowrap;letter-spacing:.18em} }
 @media (max-width:720px){ #hero .eyebrow{font-size:11.5px;letter-spacing:.14em;padding:.5em .85em} }
 </style>
+<style>/* Home hero faces on laptop and desktop (2026-10-07, John). At 992px and up the hero
+   text sat on the team's faces. The photo now runs full width (nobody cut at the sides),
+   slides up so the faces sit just under the nav, and its bottom edge sits on the hero
+   bottom when there is room; on shorter screens the faces stay high and the photo fades
+   into the dark hero floor instead of covering it. The text block widens a little (fewer
+   lines) and hugs the bottom of the first screen, about 4.5vh up so the buttons still
+   trigger their reveal. Phones, tablets and tall or square windows are untouched. */
+@media (min-width:992px) and (min-aspect-ratio:5/4){
+  #hero .hero__media{container-type:size;background:#080c0a}
+  #hero .hero__img{inset:auto 0 auto 0;width:100%;height:auto;aspect-ratio:3/2;
+    /* face band (hair to chin) is 27.6% to 44.2% of the photo height = 18.4cqw to 29.5cqw */
+    top:min(0px,clamp(calc(116px - 18.4cqw), calc(100cqh - 66.67cqw), calc(100cqh - var(--util-h) - 4.5vh - 430px - 29.5cqw)));
+    -webkit-mask-image:linear-gradient(180deg,#000 86%,transparent 100%);mask-image:linear-gradient(180deg,#000 86%,transparent 100%)}
+  #hero.hero--compact .hero__scrim{background:linear-gradient(180deg,rgba(8,12,10,.7) 0,rgba(8,12,10,.32) 70px,rgba(8,12,10,0) 124px),linear-gradient(0deg,rgba(8,12,10,.94) 0%,rgba(8,12,10,.8) 24%,rgba(8,12,10,.5) 44%,rgba(8,12,10,.14) 60%,rgba(8,12,10,0) 70%),linear-gradient(90deg,rgba(8,12,10,.42) 0%,rgba(8,12,10,0) 52%)}
+  #hero.hero--compact .wrap{padding-bottom:calc(var(--util-h) + 4.5vh + 14px)}
+  #hero.hero--compact .hero__in{max-width:min(780px,100%)}
+  #hero.hero--compact .hero__sub{max-width:62ch}
+}
+</style>
 <link rel="stylesheet" href="le-nav.css">
 </head>
 <body>
