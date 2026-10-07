@@ -63,21 +63,38 @@
 .fn-also a{color:var(--g-band);text-decoration:underline;text-underline-offset:3px}
 </style>
 <style>/* FN hero and contents rail (2026-10-06 design review).
-   The eyebrow gets the same dark pill as the home heroes. On phones the photo
-   sits right behind the heading (the logo on Dr. Dale's shirt landed under
-   "Wooster"), so the overlay is much deeper there and the photo is shifted so
-   Dr. Dale and the logo sit to the right, away from the heading. */
+   The eyebrow gets the same dark pill as the home heroes. The hero photo
+   placement is in the next style block (Oct 7 photo swap). */
 #fn-hero .eyebrow{display:inline-block;color:#fff;background:rgba(8,12,10,.62);border:1px solid rgba(255,255,255,.18);padding:.55em 1.05em;border-radius:14px;font-size:12.5px;letter-spacing:.2em;line-height:1.5;text-shadow:0 1px 2px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 @media (min-width:721px){ #fn-hero .eyebrow{white-space:nowrap;letter-spacing:.18em} }
 @media (max-width:720px){
   #fn-hero .eyebrow{font-size:11.5px;letter-spacing:.14em;padding:.5em .85em}
-  #fn-hero .ihero__media img{object-position:26% 30%!important}
-  #fn-hero .ihero__scrim{background:linear-gradient(0deg,rgba(10,14,12,.97) 0%,rgba(10,14,12,.9) 40%,rgba(10,14,12,.76) 66%,rgba(10,14,12,.5) 86%,rgba(10,14,12,.38) 100%)}
   #fn-hero h1{text-shadow:0 2px 18px rgba(0,0,0,.55)}
   /* "On this page" as a plain vertical list instead of wrapping in rows */
   #answer .toc{flex-direction:column;flex-wrap:nowrap;gap:0;border-top:0;border-left:1px solid var(--stroke);padding-top:0}
   #answer .toc a{border-bottom:0;border-left:2px solid transparent;margin-left:-1px;padding:.55em 0 .55em 1.05em}
   #answer .toc a.on{border-bottom:0;border-left-color:var(--g-lite)}
+}
+</style>
+<style>/* FN hero photo (Jaimie, Oct 7): Dr. Dale and Dr. Aric against the brick wall.
+   Wide screens (861px and up): the photo is a right-hand panel that fades into a
+   dark wall tone on its left and top edges, so the heading sits on plain dark,
+   both faces stay clear of it and Dr. Aric's head clears the menu bar. Tablets in portrait and phones: the photo is a band across the top, below
+   the menu bar, and the heading starts under their faces. */
+#fn-hero{background:#1a1411}
+#fn-hero .ihero__media img{object-position:var(--fn-x,40%) var(--fn-y,0%)}
+@media (min-width:861px){
+  #fn-hero .ihero__media{left:auto;width:var(--fn-pw,60%);top:60px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%),linear-gradient(180deg,transparent 0,#000 12%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 34%),linear-gradient(180deg,transparent 0,#000 12%);mask-composite:intersect}
+  #fn-hero .ihero__scrim{background:linear-gradient(0deg,rgba(12,66,35,.4) 0%,rgba(12,66,35,0) 36%)}
+}
+@media (min-width:861px) and (max-width:1080px){
+  #fn-hero{--fn-pw:62%;--fn-x:58%}
+  #fn-hero .ihero__in{max-width:50%}
+}
+@media (max-width:860px){
+  #fn-hero{--fn-x:52%;--fn-w:min(205vw,1100px);padding-top:calc(78px + var(--fn-w)*.316)}
+  #fn-hero .ihero__media{top:64px;bottom:auto;height:calc(var(--fn-w)*.6667);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
+  #fn-hero .ihero__scrim{background:linear-gradient(0deg,rgba(10,14,12,.96) 0%,rgba(10,14,12,.9) 40%,rgba(10,14,12,.5) 60%,rgba(10,14,12,.1) 76%,rgba(10,14,12,0) 100%)}
 }
 </style>
 <link rel="stylesheet" href="le-nav.css">
@@ -112,7 +129,7 @@
     <div class="nav__inner">
       <a href="index.html" class="brand" aria-label="Complete Chiropractic"><img class="brand__icon" src="assets/brand-spine-icon.webp" alt="" aria-hidden="true"> <span class="le-brandtxt">Complete Chiropractic</span></a>
       <div class="nav__links">
-        <a href="index.html">Home</a><div class="nav__dd"><a href="capela-chiro-about.html" class="nav__dd-top">Who We Are</a><button type="button" class="nav__dd-btn" aria-expanded="false" aria-controls="dd-who" aria-label="Show the Who We Are menu"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav__dd-menu" id="dd-who"><a href="capela-chiro-about.html">Meet the Team</a><a href="capela-chiro-pcd.html">Payment Options</a></div></div><div class="nav__dd"><a href="capela-chiro-services.html" class="nav__dd-top on">Services</a><button type="button" class="nav__dd-btn" aria-expanded="false" aria-controls="dd-services" aria-label="Show the Services menu"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav__dd-menu" id="dd-services"><a href="capela-chiro-service-functional-neurology.html" class="on" aria-current="page">Functional Neurology</a><a href="capela-chiro-services.html">All Services</a></div></div><a href="capela-chiro-conditions.html">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
+        <a href="index.html">Home</a><div class="nav__dd"><a href="capela-chiro-about.html" class="nav__dd-top">Who We Are</a><button type="button" class="nav__dd-btn" aria-expanded="false" aria-controls="dd-who" aria-label="Show the Who We Are menu"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav__dd-menu" id="dd-who"><a href="capela-chiro-about.html">Meet the Team</a><a href="capela-chiro-pcd.html">Payment Options</a></div></div><div class="nav__dd"><a href="capela-chiro-services.html" class="nav__dd-top on">Services</a><button type="button" class="nav__dd-btn" aria-expanded="false" aria-controls="dd-services" aria-label="Show the Services menu"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="nav__dd-menu" id="dd-services"><a href="capela-chiro-service-functional-neurology.html" class="on" aria-current="page">Functional Neurology</a><a href="capela-chiro-service-chiropractic.html">Chiropractic Care</a><a href="capela-chiro-services.html">All Services</a></div></div><a href="capela-chiro-conditions.html">Conditions</a><a href="capela-chiro-contact.html">Contact</a>
       </div>
       <div class="nav__cta">
         <a href="capela-chiro-special.html" class="btn btn-lite">Schedule an appointment</a>
@@ -123,7 +140,7 @@
 </nav>
 
 <header class="ihero" id="fn-hero">
-  <div class="ihero__media"><img src="assets/photo-chiro-assessment.webp" alt="Dr. Dale Capela with a patient at Complete Chiropractic in Wooster" style="object-position:58% 30%"></div>
+  <div class="ihero__media"><img src="assets/photo-doctors-dale-aric.webp" alt="Dr. Dale Capela and Dr. Aric Freischlag of Complete Chiropractic in Wooster" width="1600" height="1067"></div>
   <div class="ihero__scrim"></div>
   <div class="wrap">
     <div class="ihero__in">
